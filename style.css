@@ -747,6 +747,23 @@ h2 {
 
 .doc-card a { color: var(--ink); }
 
+.contact-form { margin-top: 18px; display: grid; gap: 14px; max-width: 460px; }
+.contact-form .field label {
+  display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%; font: inherit; font-size: 15px; padding: 10px 14px;
+  border-radius: var(--radius-sm); border: 1px solid var(--hairline);
+  background: #fff; outline: none; resize: vertical;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: rgba(255,106,43,.55); box-shadow: 0 0 0 3px rgba(255,106,43,.12);
+}
+.contact-form .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form button { justify-self: start; }
+
 .table-scroll { overflow-x: auto; }
 
 table.lic-table {
