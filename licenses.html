@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open-Source Attributions &amp; Third-Party Licenses — IgniteX</title>
+  <meta name="description" content="Third-party open-source components bundled in IgniteX — Wine (Sikarugir build), DXMT, MoltenVK, FreeType, libpng, SDL2, GnuTLS — with licenses, source links, and our LGPL source-code offer.">
+  <link rel="canonical" href="https://ignitex.app/licenses.html">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IgniteX">
+  <meta property="og:title" content="IgniteX — Open-Source Attributions &amp; Licenses">
+  <meta property="og:description" content="Every third-party component IgniteX ships, its license, and where to get the source code.">
+  <meta property="og:url" content="https://ignitex.app/licenses.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="IgniteX home">
+      <span class="logo-ix" aria-hidden="true">IX</span>
+      IgniteX
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#games">Games</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="nav-cta" href="index.html#pricing">Get IgniteX — $5</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc-page">
+  <div class="wrap">
+    <h1>Open-source attributions &amp; third-party licenses</h1>
+    <p class="doc-lede">
+      IgniteX ships a self-contained Windows compatibility engine built from
+      open-source software. IgniteX itself is proprietary, but the components
+      below remain under their own licenses — those licenses are not affected
+      by your IgniteX license, and this page tells you exactly what we bundle,
+      under which terms, and where to get the source code.
+    </p>
+
+    <section class="doc-card" aria-labelledby="components-h">
+      <h2 id="components-h">Bundled components</h2>
+      <div class="table-scroll">
+        <table class="lic-table">
+          <thead>
+            <tr>
+              <th scope="col">Component</th>
+              <th scope="col">Version / build</th>
+              <th scope="col">License</th>
+              <th scope="col">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wine</td>
+              <td>10.0, Sikarugir build (CrossOver-derived)</td>
+              <td>LGPL-2.1-or-later</td>
+              <td><a href="https://github.com/Sikarugir-App" rel="noopener">github.com/Sikarugir-App</a></td>
+            </tr>
+            <tr>
+              <td>DXMT</td>
+              <td>v0.80</td>
+              <td>LGPL-2.1-or-later</td>
+              <td><a href="https://github.com/3Shain/dxmt" rel="noopener">github.com/3Shain/dxmt</a></td>
+            </tr>
+            <tr>
+              <td>MoltenVK</td>
+              <td>bundled dylib</td>
+              <td>Apache-2.0</td>
+              <td><a href="https://github.com/KhronosGroup/MoltenVK" rel="noopener">github.com/KhronosGroup/MoltenVK</a></td>
+            </tr>
+            <tr>
+              <td>FreeType</td>
+              <td>bundled dylib</td>
+              <td>FTL (FreeType License)</td>
+              <td><a href="https://freetype.org" rel="noopener">freetype.org</a></td>
+            </tr>
+            <tr>
+              <td>libpng</td>
+              <td>bundled dylib</td>
+              <td>zlib/libpng license</td>
+              <td><a href="http://www.libpng.org" rel="noopener">libpng.org</a></td>
+            </tr>
+            <tr>
+              <td>SDL2</td>
+              <td>bundled dylib</td>
+              <td>zlib</td>
+              <td><a href="https://www.libsdl.org" rel="noopener">libsdl.org</a></td>
+            </tr>
+            <tr>
+              <td>GnuTLS</td>
+              <td>bundled dylib</td>
+              <td>LGPL-2.1-or-later</td>
+              <td><a href="https://www.gnutls.org" rel="noopener">gnutls.org</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-card" aria-labelledby="notes-h">
+      <h2 id="notes-h">Component notes and obligations</h2>
+
+      <h3>Wine (LGPL-2.1-or-later)</h3>
+      <p>
+        The engine's core. We redistribute the Sikarugir project's open-source
+        Wine&nbsp;10 build (a CrossOver-derived tree). Recipients must be able to
+        obtain the complete corresponding source code — the source for the build
+        we ship is at
+        <a href="https://github.com/Sikarugir-App" rel="noopener">github.com/Sikarugir-App</a>.
+        If we ever patch Wine ourselves, our patches will be published under the
+        same license (LGPL&nbsp;2.1 §6). Distributing the binaries commercially is
+        permitted; the LGPL applies to the Wine components, not to IgniteX's own
+        code, which only invokes Wine as separate processes.
+      </p>
+
+      <h3>DXMT (LGPL-2.1-or-later)</h3>
+      <p>
+        Direct3D&nbsp;11 → Metal translation layer (<code>winemetal.so</code>,
+        <code>winemetal.dll</code>, <code>d3d11.dll</code>, <code>dxgi.dll</code>,
+        <code>d3d10core.dll</code>). Note: the DXMT repository's LICENSE file is
+        the GNU Lesser General Public License v2.1 or later (GitHub's automatic
+        license detection shows "Other", but the license text is LGPL-2.1+).
+        Same obligations as Wine: source for the version we ship (v0.80) is at
+        <a href="https://github.com/3Shain/dxmt" rel="noopener">github.com/3Shain/dxmt</a>;
+        any modifications we make will be published.
+      </p>
+
+      <h3>MoltenVK (Apache-2.0)</h3>
+      <p>
+        Vulkan → Metal runtime library by the Khronos Group. We retain the
+        Apache-2.0 license text and copyright/NOTICE attributions, and we ship
+        it unmodified. License text:
+        <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">apache.org/licenses/LICENSE-2.0</a>.
+      </p>
+
+      <h3>FreeType (FTL)</h3>
+      <p>
+        Font rendering library, under the FreeType License (BSD-style with a
+        credit requirement). The required credit:
+        <em>"Portions of this software are copyright © The FreeType Project
+        (<a href="https://www.freetype.org" rel="noopener">www.freetype.org</a>).
+        All rights reserved."</em>
+      </p>
+
+      <h3>libpng (zlib/libpng license)</h3>
+      <p>
+        PNG reference library. We do not misrepresent the origin of the
+        software; the license and copyright notice accompany source
+        redistributions. Binary redistribution is unrestricted with this notice.
+      </p>
+
+      <h3>SDL2 (zlib)</h3>
+      <p>
+        Simple DirectMedia Layer. Same zlib-style terms — no misrepresentation
+        of origin; notice retained in source distributions.
+      </p>
+
+      <h3>GnuTLS (LGPL-2.1-or-later)</h3>
+      <p>
+        TLS library used by Wine for HTTPS. Same obligations as Wine: complete
+        corresponding source must be obtainable —
+        <a href="https://www.gnutls.org" rel="noopener">gnutls.org</a>
+        (we ship an unmodified build).
+      </p>
+    </section>
+
+    <section class="doc-card" aria-labelledby="not-included-h">
+      <h2 id="not-included-h">What is NOT included</h2>
+      <ul>
+        <li>
+          <strong>Steam client (Valve Corporation).</strong> IgniteX does not
+          redistribute Steam or any Valve software. The end user downloads the
+          Steam installer directly from Valve during setup and uses it under the
+          Steam Subscriber Agreement. "Steam" is a trademark of Valve
+          Corporation; IgniteX is an independent product, not affiliated with or
+          endorsed by Valve.
+        </li>
+        <li>
+          <strong>Apple Game Porting Toolkit / D3DMetal.</strong> Not bundled and
+          never will be — Apple's license permits evaluation/development use
+          only and does not allow redistribution. IgniteX's graphics stack is
+          fully open source (DXMT&nbsp;+&nbsp;MoltenVK).
+        </li>
+        <li>
+          <strong>Games and game content.</strong> Owned and downloaded by the
+          user via their own Steam account.
+        </li>
+      </ul>
+    </section>
+
+    <section class="doc-card" aria-labelledby="offer-h">
+      <h2 id="offer-h">Source-code offer (LGPL compliance)</h2>
+      <p>
+        For the LGPL components listed above (Wine, DXMT, GnuTLS), the complete
+        corresponding source code for the versions we distribute is available at
+        the linked repositories. If a linked source becomes unavailable, or you
+        prefer a physical copy, contact us at
+        <a href="mailto:support@ignitex.app">support@ignitex.app</a> and we will
+        provide the source of the exact shipped versions at no more than the
+        cost of distribution.
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-ix" aria-hidden="true">IX</span>
+        IgniteX
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Game catalog</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="refund.html">Refunds</a></li>
+      </ul>
+    </div>
+    <div class="footer-legal">
+      <p>
+        IgniteX is an independent product. It is <strong>not affiliated with, sponsored by,
+        or endorsed by Valve Corporation</strong>. Steam is a trademark of Valve Corporation.
+        All other trademarks are the property of their respective owners.
+      </p>
+      <p>© 2026 IgniteX. Made in the Czech Republic.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

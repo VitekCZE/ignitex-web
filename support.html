@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support &amp; Troubleshooting — IgniteX</title>
+  <meta name="description" content="IgniteX support: system requirements, first-run setup, fixes for the most common issues, and how to reach a human.">
+  <link rel="canonical" href="https://ignitex.app/support.html">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IgniteX">
+  <meta property="og:title" content="IgniteX — Support &amp; Troubleshooting">
+  <meta property="og:description" content="Requirements, first-run setup, common fixes, and how to reach a human.">
+  <meta property="og:url" content="https://ignitex.app/support.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="IgniteX home">
+      <span class="logo-ix" aria-hidden="true">IX</span>
+      IgniteX
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#how">How it works</a>
+      <a href="games.html">Games</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="nav-cta" href="index.html#pricing">Get IgniteX — $5</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc-page">
+  <div class="wrap">
+    <h1>Support &amp; troubleshooting</h1>
+    <p class="doc-lede">
+      Most problems are one of a handful of things. Start here — and if you're
+      still stuck, email a real person at
+      <a href="mailto:support@ignitex.app">support@ignitex.app</a>.
+    </p>
+
+    <section class="doc-card" aria-labelledby="req-h">
+      <h2 id="req-h">System requirements</h2>
+      <ul>
+        <li><strong>Apple Silicon Mac</strong> (M1 or newer). Intel Macs are not supported.</li>
+        <li><strong>macOS Sonoma (14) or later.</strong></li>
+        <li><strong>Rosetta 2</strong> — IgniteX offers to install it on first run if it's missing.</li>
+        <li>Roughly <strong>10&nbsp;GB free</strong> for the engine and Steam client, plus space for each game you install.</li>
+        <li>Your own <strong>Steam account</strong> and the games you want to play.</li>
+      </ul>
+    </section>
+
+    <section class="doc-card" aria-labelledby="firstrun-h">
+      <h2 id="firstrun-h">First-run setup, step by step</h2>
+      <ol>
+        <li>Drag <strong>IgniteX</strong> into Applications.</li>
+        <li>The first time, right-click (or Ctrl-click) IgniteX → <strong>Open</strong> → <strong>Open</strong>. This is Apple's approval step for a newly-installed app. <em>(Once IgniteX is notarized this step goes away.)</em></li>
+        <li>Follow the wizard: it installs the compatibility engine, then downloads the Steam client — about <strong>600&nbsp;MB the first time</strong>. Steam updates itself before the sign-in screen appears, so give it a couple of minutes on the "Steam is updating itself" step.</li>
+        <li>Sign in with your Steam account (including your Steam Guard code). Your login goes straight to Valve — IgniteX never sees it.</li>
+        <li>Install a game from your library and press Play.</li>
+      </ol>
+    </section>
+
+    <section class="doc-card" aria-labelledby="common-h">
+      <h2 id="common-h">Common issues &amp; fixes</h2>
+
+      <h3>"IgniteX can't be opened" on first launch</h3>
+      <p>
+        That's Gatekeeper on a freshly-installed app. Right-click the app →
+        <strong>Open</strong> → <strong>Open</strong>. You only do this once.
+      </p>
+
+      <h3>The setup screen sits on "Steam is updating itself"</h3>
+      <p>
+        Normal on the first run — Steam downloads its own client (~600&nbsp;MB)
+        before showing the login window. Leave it on Wi-Fi for a few minutes.
+        It only happens once.
+      </p>
+
+      <h3>A game launches but looks wrong, or won't start</h3>
+      <p>
+        Compatibility varies by game. Check the game in the
+        <a href="games.html">catalog</a>: green means it should work, amber means
+        it may need tweaks, red means it won't run locally (usually kernel-level
+        anti-cheat, which we don't and won't circumvent). Only MECCHA CHAMELEON
+        and Counter-Strike&nbsp;2 are verified by hand today; the rest are
+        predictions.
+      </p>
+
+      <h3>Performance is lower than expected</h3>
+      <p>
+        Frame rates depend heavily on your Mac (an M1 Air is not an M4 Max) and
+        on the game. We don't guarantee any specific performance. If a game is
+        borderline, closing other apps and lowering in-game resolution helps most.
+      </p>
+
+      <h3>Sending us a log</h3>
+      <p>
+        In IgniteX, open <strong>Settings → Show logs folder</strong> (or find it
+        at <code>~/Library/Application&nbsp;Support/SteamBridge/Logs</code>) and
+        attach the newest <code>.log</code> file to your email. Logs stay on your
+        Mac unless you send one.
+      </p>
+    </section>
+
+    <section class="doc-card" aria-labelledby="contact-h">
+      <h2 id="contact-h">Still stuck? Talk to a human</h2>
+      <p>
+        Email <a href="mailto:support@ignitex.app">support@ignitex.app</a> with
+        your Mac model, macOS version, the game, and a log if you have one. If
+        IgniteX genuinely doesn't work for you, remember the
+        <a href="refund.html">14-day refund</a> is there — no drama.
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-ix" aria-hidden="true">IX</span>
+        IgniteX
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Game catalog</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="refund.html">Refunds</a></li>
+        <li><a href="licenses.html">Licenses</a></li>
+      </ul>
+    </div>
+    <div class="footer-legal">
+      <p>
+        IgniteX is an independent product. It is <strong>not affiliated with, sponsored by,
+        or endorsed by Valve Corporation</strong>. Steam is a trademark of Valve Corporation.
+        All other trademarks are the property of their respective owners.
+      </p>
+      <p>© 2026 IgniteX. Made in the Czech Republic.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
