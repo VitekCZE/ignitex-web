@@ -11,8 +11,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IgniteX - Play your Windows Steam library on your Mac</title>
-  <meta name="description" content="IgniteX runs Windows games from your Steam library natively on Apple Silicon Macs. Metal graphics via DXMT, one-click setup, no Windows needed. $5 one-time, no subscription. 466 games on the green list.">
-  <link rel="canonical" href="https://ignitex.app/">
+  <meta name="description" content="Play Windows Steam games natively on Apple Silicon Mac. $5 one-time, no subscription. Open-source DXMT engine, one-click setup, 466 games rated compatible.">
+  <link rel="canonical" href="https://ignitex-app.com/">
   <link rel="stylesheet" href="style.css">
 
   <!-- Open Graph -->
@@ -20,12 +20,10 @@
   <meta property="og:site_name" content="IgniteX">
   <meta property="og:title" content="IgniteX: Your Mac finally games.">
   <meta property="og:description" content="Play the Windows games in your Steam library natively on Apple Silicon. One click, sign in, play. $5, one time.">
-  <meta property="og:url" content="https://ignitex.app/">
-  <meta property="og:image" content="https://ignitex.app/screenshot-main.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://ignitex-app.com/">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="IgniteX: Your Mac finally games.">
   <meta name="twitter:description" content="Play the Windows games in your Steam library natively on Apple Silicon. One click, sign in, play. $5, one time.">
-  <meta name="twitter:image" content="https://ignitex.app/screenshot-main.png">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -36,14 +34,92 @@
     "operatingSystem": "macOS 14.0 or later (Apple Silicon)",
     "applicationCategory": "GameApplication",
     "description": "IgniteX runs Windows games from your Steam library natively on Apple Silicon Macs. No Windows, no dual-boot: graphics translated to Metal via the open-source DXMT layer.",
-    "url": "https://ignitex.app/",
-    "image": "https://ignitex.app/screenshot-main.png",
+    "url": "https://ignitex-app.com/",
     "offers": {
       "@type": "Offer",
       "price": "5.00",
       "priceCurrency": "USD",
       "availability": "https://schema.org/PreOrder"
     }
+  }
+  </script>
+
+  <!-- FAQPage schema: for AI answer engines (Perplexity, ChatGPT, Google AI
+       Overviews) parsing structured Q&A, not for a Google rich-snippet
+       (Google retired that SERP feature). Mirrors the visible #faq section. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Steam games work with IgniteX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DirectX 11 titles from your Steam library are the sweet spot. IgniteX maintains a public catalog of 777 assessed games: 466 run, 213 need tweaks or are offline-only, and 98 won't run (usually kernel-level anti-cheat). Games with kernel anti-cheat, like most competitive multiplayer shooters, do not work locally on IgniteX or any Mac compatibility layer. Only MECCHA CHAMELEON and Counter-Strike 2 are hand-verified by the founder; every other rating is a compatibility-rules prediction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a Windows license to use IgniteX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. IgniteX does not use Windows at all. Games run through an open-source Wine and DXMT translation layer directly on macOS, with graphics rendered natively via Metal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it legal to use IgniteX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You play games you already own, on your own Steam account. The Steam client is downloaded directly from Valve during setup and used under the Steam Subscriber Agreement. IgniteX is built on open-source technology (Wine, DXMT, MoltenVK) and is an independent product, not affiliated with Valve."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Mac do I need to run IgniteX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any Apple Silicon Mac (M1 or newer) running macOS 14 Sonoma or later, with about 3 GB of disk space for IgniteX and Steam plus space for each game. Compatibility is not the same as performance: a base M1 with 8 GB won't push a demanding AAA title the way an M4 Pro will."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if a game doesn't run properly on IgniteX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IgniteX offers a 14-day money-back refund, no questions asked. Check the public compatibility catalog before buying to see whether your specific games are rated green, amber, or red first."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- HowTo schema for the 3-step onboarding flow shown in the "How it works" section. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to play your Windows Steam library on an Apple Silicon Mac with IgniteX",
+    "description": "Three steps to run Windows Steam games natively on an Apple Silicon Mac using IgniteX's open-source compatibility engine.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Install IgniteX",
+        "text": "Drag the app into Applications and open it. IgniteX prepares its gaming environment and fetches the Steam client for you: one click, about 600 MB, a few minutes."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Sign in to Steam",
+        "text": "The familiar Steam login window appears. Enter your account name, password, and Steam Guard code, exactly as on any other computer."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Press Play",
+        "text": "Pick a game, install it, hit Play. Direct3D graphics are translated straight to Metal by the open-source DXMT layer."
+      }
+    ]
   }
   </script>
 </head>
@@ -60,6 +136,7 @@
       <a href="#how">How it works</a>
       <a href="#games">Games</a>
       <a href="#compatibility">Compatibility</a>
+      <a href="blog/index.html">Blog</a>
       <a href="#faq">FAQ</a>
       <a class="nav-cta" href="#pricing">Coming Soon</a>
     </nav>
@@ -379,6 +456,7 @@
       </div>
       <ul class="footer-links">
         <li><a href="games.html">Game catalog</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="support.html">Support</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="changelog.html">Changelog</a></li>

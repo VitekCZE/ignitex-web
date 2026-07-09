@@ -1,0 +1,27 @@
+# IgniteX
+
+> IgniteX is a $5 one-time macOS app that lets Apple Silicon Macs run a user's own Windows Steam library natively, using a 100% open-source compatibility engine (Wine 10 Sikarugir build + DXMT DirectX-11-to-Metal translation). No subscription, no Apple GPTK/D3DMetal bundled, no Windows license required. Only two games are hand-verified by the founder: MECCHA CHAMELEON (Steam App ID 4704690) and Counter-Strike 2 (App ID 730, VAC-compatible). Every other compatibility rating in the 777-game catalog is an explicit prediction, not a guarantee. Kernel-level anti-cheat titles (Valorant, Warzone, etc.) never run; IgniteX contains no anti-cheat circumvention.
+
+## Product
+- [Homepage](https://ignitex-app.com/): pricing, how it works, FAQ, compatibility trust badges.
+- [Game compatibility catalog](https://ignitex-app.com/games.html): searchable, honest green/amber/red verdicts for 777 Steam games.
+- [Support & troubleshooting](https://ignitex-app.com/support.html): system requirements, setup steps, common fixes.
+- [Changelog](https://ignitex-app.com/changelog.html): version history.
+
+## Blog
+- [How to Play Windows Steam Games on Mac (2026 guide)](https://ignitex-app.com/blog/how-to-play-windows-steam-games-on-mac.html): comparison of CrossOver, Whisky, GPTK, and IgniteX; the honest anti-cheat landscape.
+- [IgniteX vs CrossOver vs Whisky vs GPTK](https://ignitex-app.com/blog/ignitex-vs-crossover-vs-whisky-vs-gptk.html): head-to-head comparison of the four ways to run Windows games on Apple Silicon.
+- [MECCHA CHAMELEON on Mac](https://ignitex-app.com/blog/meccha-chameleon-on-mac-apple-silicon.html): hand-verified setup and results for one of only two hand-tested games.
+- [CS2 on Mac](https://ignitex-app.com/blog/cs2-on-mac.html): why VAC anti-cheat tolerates Wine translation when EAC/BattlEye don't.
+- [Sekiro on Mac](https://ignitex-app.com/blog/sekiro-on-mac-apple-silicon.html): a top-tier compatibility prediction, explained.
+- [Elden Ring on Mac](https://ignitex-app.com/blog/elden-ring-on-mac-offline.html): offline-only, honest explanation of Easy Anti-Cheat.
+- [Red Dead Redemption 2 on Mac](https://ignitex-app.com/blog/red-dead-redemption-2-on-mac-apple-silicon.html): honest current status (amber/broken) and why.
+- [Which Mac Can Run Your Steam Library](https://ignitex-app.com/blog/which-mac-can-run-your-steam-library.html): hardware guide across M1-M4 and RAM tiers.
+- [How DXMT and Rosetta 2 Actually Work](https://ignitex-app.com/blog/how-dxmt-rosetta-2-translation-actually-works.html): technical explainer of the translation stack.
+- [Best Steam Games on Apple Silicon Mac 2026](https://ignitex-app.com/blog/best-steam-games-mac-apple-silicon-2026.html): curated list drawn from the 777-game audit.
+
+## Policies
+- [Terms of use & licence agreement](https://ignitex-app.com/terms.html)
+- [Privacy policy](https://ignitex-app.com/privacy.html)
+- [Refund policy](https://ignitex-app.com/refund.html) (14-day money-back guarantee)
+- [Open-source licenses & attributions](https://ignitex-app.com/licenses.html)
