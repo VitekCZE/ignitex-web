@@ -62,7 +62,7 @@
       <h2 id="firstrun-h">First-run setup, step by step</h2>
       <ol>
         <li>Drag <strong>IgniteX</strong> into Applications.</li>
-        <li>The first time, right-click (or Ctrl-click) IgniteX → <strong>Open</strong> → <strong>Open</strong>. This is Apple's approval step for a newly-installed app. <em>(Once IgniteX is notarized this step goes away.)</em></li>
+        <li>Double-click IgniteX to open it. The app is signed and notarized by Apple, so there are no security warnings to click through.</li>
         <li>Follow the wizard: it installs the compatibility engine, then downloads the Steam client, about <strong>600&nbsp;MB the first time</strong>. Steam updates itself before the sign-in screen appears, so give it a couple of minutes on the "Steam is updating itself" step.</li>
         <li>Sign in with your Steam account (including your Steam Guard code). Your login goes straight to Valve. IgniteX never sees it.</li>
         <li>Install a game from your library and press Play.</li>
@@ -74,8 +74,10 @@
 
       <h3>"IgniteX can't be opened" on first launch</h3>
       <p>
-        That's Gatekeeper on a freshly-installed app. Right-click the app →
-        <strong>Open</strong> → <strong>Open</strong>. You only do this once.
+        This shouldn't happen: IgniteX is signed and notarized by Apple, so
+        macOS opens it with a plain double-click. If you see this message,
+        your download was likely corrupted in transit. Delete the app, download
+        the DMG again, and reinstall. Still stuck? Use the contact form below.
       </p>
 
       <h3>The setup screen sits on "Steam is updating itself"</h3>
