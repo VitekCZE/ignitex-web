@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xjpdim1cn9");
-  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MECCHA CHAMELEON on Mac (Apple Silicon): Our Hand-Verified Setup | IgniteX</title>
@@ -89,7 +82,7 @@
   <h2>The setup, step by step</h2>
   <p>This is the same flow IgniteX automates for every game, but here is what it looked like concretely for this title:</p>
   <ol>
-    <li><strong>Install IgniteX and let it set up its engine.</strong> IgniteX provisions a self-contained Wine 10 (Sikarugir) environment with DXMT built in, the same open-source Direct3D-11-to-Metal translation layer used across the catalog. Nothing here is Apple's Game Porting Toolkit or D3DMetal; those are never bundled, by policy.</li>
+    <li><strong>Install IgniteX and let it set up its engine.</strong> IgniteX provisions a self-contained, fully open-source Wine environment (Wine&nbsp;11 from WineHQ with published IgniteX patches) with DirectX-to-Metal translation, the same open-source stack used across the catalog. Nothing here is Apple's Game Porting Toolkit or D3DMetal; those are never bundled, by policy.</li>
     <li><strong>Sign in to Steam and install MECCHA CHAMELEON.</strong> The Steam client itself is downloaded directly from Valve during setup, and your library shows up exactly as it does on a PC. The download for this title is quick given its small footprint.</li>
     <li><strong>First launch, and a few automatic tweaks.</strong> Because this is an Unreal Engine 5 title, a small number of adjustments make the difference between "runs" and "runs well." IgniteX applies these for you; you never see a config file. In order of how much they mattered in testing:</li>
   </ol>

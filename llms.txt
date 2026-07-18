@@ -1,6 +1,6 @@
 # IgniteX
 
-> IgniteX is a $5 one-time macOS app that lets Apple Silicon Macs run a user's own Windows Steam library natively, using a 100% open-source compatibility engine (Wine 10 Sikarugir build + DXMT DirectX-11-to-Metal translation). No subscription, no Apple GPTK/D3DMetal bundled, no Windows license required. Only two games are hand-verified by the founder: MECCHA CHAMELEON (Steam App ID 4704690) and Counter-Strike 2 (App ID 730, VAC-compatible). Every other compatibility rating in the 777-game catalog is an explicit prediction, not a guarantee. Kernel-level anti-cheat titles (Valorant, Warzone, etc.) never run; IgniteX contains no anti-cheat circumvention.
+> IgniteX is a $6.99 one-time macOS app that lets Apple Silicon Macs run a user's own Windows Steam library natively, using a 100% open-source compatibility engine (Wine 11 from WineHQ with published IgniteX patches, plus DXMT/DXVK/MoltenVK translation layers). Apple's Game Porting Toolkit is supported as an optional component the user downloads from Apple themselves; it is never bundled. No subscription, no Windows license required. Four games are hand-verified by the founder: Counter-Strike 2 (App ID 730, VAC-compatible), Red Dead Redemption 2 (1174180, story mode), RV There Yet? (3949040), and MECCHA CHAMELEON (4704690). Every other compatibility rating in the 777-game catalog is an explicit prediction, not a guarantee. Kernel-level anti-cheat titles (Valorant, Warzone, etc.) never run; IgniteX contains no anti-cheat circumvention.
 
 ## Product
 - [Homepage](https://ignitex-app.com/): pricing, how it works, FAQ, compatibility trust badges.
@@ -9,8 +9,7 @@
 - [Changelog](https://ignitex-app.com/changelog.html): version history.
 
 ## Blog
-- [How to Play Windows Steam Games on Mac (2026 guide)](https://ignitex-app.com/blog/how-to-play-windows-steam-games-on-mac.html): comparison of CrossOver, Whisky, GPTK, and IgniteX; the honest anti-cheat landscape.
-- [IgniteX vs CrossOver vs Whisky vs GPTK](https://ignitex-app.com/blog/ignitex-vs-crossover-vs-whisky-vs-gptk.html): head-to-head comparison of the four ways to run Windows games on Apple Silicon.
+- [How to Play Windows Steam Games on Mac (2026 guide)](https://ignitex-app.com/blog/how-to-play-windows-steam-games-on-mac.html): comparison of commercial Wine apps, Whisky, GPTK, and IgniteX; the honest anti-cheat landscape.
 - [MECCHA CHAMELEON on Mac](https://ignitex-app.com/blog/meccha-chameleon-on-mac-apple-silicon.html): hand-verified setup and results for one of only two hand-tested games.
 - [CS2 on Mac](https://ignitex-app.com/blog/cs2-on-mac.html): why VAC anti-cheat tolerates Wine translation when EAC/BattlEye don't.
 - [Sekiro on Mac](https://ignitex-app.com/blog/sekiro-on-mac-apple-silicon.html): a top-tier compatibility prediction, explained.

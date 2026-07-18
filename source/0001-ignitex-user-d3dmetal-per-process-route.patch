@@ -1,0 +1,159 @@
+From: IgniteX contributors
+Subject: [PATCH] ntdll: route selected executables to trusted graphics modules
+
+This patch does not contain or redistribute Apple GPTK/D3DMetal binaries.
+It only lets a caller opt selected Windows executables into a DLL directory
+owned by the user while the rest of the Wine session keeps the base renderer.
+
+Set both variables to activate the user-supplied D3DMetal route:
+
+  IGNITEX_D3DMETAL_DLL_PATH=/absolute/path/to/user/GPTK/lib/wine
+  IGNITEX_D3DMETAL_EXES=RDR2.exe
+
+Set both variables to activate the receipt-verified DXMT route:
+
+  IGNITEX_DXMT_DLL_PATH=/absolute/path/to/dxmt/v0.80
+  IGNITEX_DXMT_EXES=PenguinHotel-Win64-Shipping.exe
+
+The routes are mutually exclusive and match exact executable basenames. DXMT
+only takes ownership of D3D10Core, D3D11 and DXGI; it never intercepts D3D12.
+
+The Vulkan guard keeps a deliberately non-Vulkan build valid when the
+downstream graphics-backend hook is present.
+
+diff --git a/dlls/ntdll/unix/loader.c b/dlls/ntdll/unix/loader.c
+--- a/dlls/ntdll/unix/loader.c
++++ b/dlls/ntdll/unix/loader.c
+@@ -383,6 +383,93 @@ static void prepend_dll_path( const char *path )
+     if (path_len > dll_path_maxlen)
+         dll_path_maxlen = path_len;
+ }
++
++/*
++ * IgniteX per-process graphics routes.
++ *
++ * The Apple GPTK modules remain user supplied.  This code only gives a
++ * selected Windows executable priority access to their builtin module root;
++ * other processes in the same wineserver keep using the runtime's WineD3D.
++ */
++static BOOL ascii_token_matches_exe( const char *list, const WCHAR *image )
++{
++    const WCHAR *name = ntdll_wcsrchr( image, '\\' );
++
++    if (name) name++;
++    else name = image;
++
++    while (*list)
++    {
++        const char *start, *end, *p;
++        const WCHAR *q = name;
++
++        while (*list == ' ' || *list == '\t' || *list == ',' || *list == ';') list++;
++        start = list;
++        while (*list && *list != ',' && *list != ';') list++;
++        end = list;
++        while (end > start && (end[-1] == ' ' || end[-1] == '\t')) end--;
++
++        for (p = start; p < end && *q; p++, q++)
++        {
++            WCHAR a = *q, b = (unsigned char)*p;
++            if (a >= 'a' && a <= 'z') a -= 'a' - 'A';
++            if (b >= 'a' && b <= 'z') b -= 'a' - 'A';
++            if (a != b) break;
++        }
++        if (p == end && !*q) return TRUE;
++    }
++    return FALSE;
++}
++
++static BOOL ignitex_route_matches( const char *path, const char *executables )
++{
++    return path && path[0] == '/' && executables &&
++           ascii_token_matches_exe( executables, main_wargv[0] );
++}
++
++static void init_ignitex_graphics_route(void)
++{
++    static const WCHAR d3dmetal_overridesW[] =
++    {
++        'd','3','d','1','0',',','d','3','d','1','1',',','d','3','d','1','2',',',
++        'd','x','g','i','=','b',0
++    };
++    static const WCHAR dxmt_overridesW[] =
++    {
++        'd','3','d','1','0','c','o','r','e',',','d','3','d','1','1',',',
++        'd','x','g','i','=','b',0
++    };
++    const char *d3dmetal_path = getenv( "IGNITEX_D3DMETAL_DLL_PATH" );
++    const char *d3dmetal_executables = getenv( "IGNITEX_D3DMETAL_EXES" );
++    const char *dxmt_path = getenv( "IGNITEX_DXMT_DLL_PATH" );
++    const char *dxmt_executables = getenv( "IGNITEX_DXMT_EXES" );
++    BOOL d3dmetal_match = ignitex_route_matches( d3dmetal_path,
++                                                  d3dmetal_executables );
++    BOOL dxmt_match = ignitex_route_matches( dxmt_path, dxmt_executables );
++
++    if (d3dmetal_match && dxmt_match)
++    {
++        ERR( "refusing conflicting IgniteX graphics routes for %s\n",
++             debugstr_w( main_wargv[0] ));
++        return;
++    }
++    if (d3dmetal_match)
++    {
++        prepend_dll_path( d3dmetal_path );
++        add_load_order_override( d3dmetal_overridesW );
++        setenv( "CX_ACTIVE_GRAPHICS_BACKEND", "d3dmetal", 1 );
++        WARN( "using user-supplied D3DMetal modules for %s\n",
++              debugstr_w( main_wargv[0] ));
++    }
++    else if (dxmt_match)
++    {
++        prepend_dll_path( dxmt_path );
++        add_load_order_override( dxmt_overridesW );
++        setenv( "CX_ACTIVE_GRAPHICS_BACKEND", "dxmt", 1 );
++        WARN( "using receipt-verified DXMT modules for %s\n",
++              debugstr_w( main_wargv[0] ));
++    }
++}
+ 
+ static void set_dll_path(void)
+ {
+@@ -2231,6 +2318,7 @@ NTSTATUS loader_init( CONTEXT *context, void **entry )
+     init_startup_info();
+     *(ULONG_PTR *)&peb->CloudFileFlags = get_image_address();
+     set_load_order_app_name( main_wargv[0] );
++    init_ignitex_graphics_route();
+     init_thread_stack( teb, 0, 0, 0 );
+     NtCreateKeyedEvent( &keyed_event, GENERIC_READ | GENERIC_WRITE, NULL, 0 );
+     load_ntdll();
+diff --git a/dlls/ntdll/unix/unix_private.h b/dlls/ntdll/unix/unix_private.h
+--- a/dlls/ntdll/unix/unix_private.h
++++ b/dlls/ntdll/unix/unix_private.h
+@@ -559,6 +559,7 @@ struct loadorder_list
+ };
+ 
+ extern void set_load_order_app_name( const WCHAR *app_name );
++extern void add_load_order_override( const WCHAR *entry );
+ extern enum loadorder get_load_order( const UNICODE_STRING *nt_name );
+ 
+ static inline WCHAR ntdll_towupper( WCHAR ch )
+diff --git a/dlls/win32u/vulkan.c b/dlls/win32u/vulkan.c
+--- a/dlls/win32u/vulkan.c
++++ b/dlls/win32u/vulkan.c
+@@ -3006,7 +3006,14 @@ static void vulkan_init_once(void)
+     if (!(libvulkan = getenv( "CX_LIBVULKAN" )) ||
+         !(graphics_backend = getenv( "CX_ACTIVE_GRAPHICS_BACKEND" )) ||
+         strcmp( graphics_backend, "wined3d" ))
++    {
++#ifdef SONAME_LIBVULKAN
+         libvulkan = SONAME_LIBVULKAN;
++#else
++        ERR( "No Vulkan loader was configured\n" );
++        return;
++#endif
++    }
+     else
+         ERR( "Using %s\n", libvulkan );
+ 
+-- 
+2.50.1

@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xjpdim1cn9");
-  </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Red Dead Redemption 2 on Mac (Apple Silicon): The Honest Status in 2026 | IgniteX</title>
@@ -87,7 +80,7 @@
     <li><strong>Running the launcher through alternate DXVK/VKD3D builds instead of DXMT.</strong> Different translation layers have different gaps. Some reports describe getting past the launcher this way and into the game itself, only to hit a second wall: RDR2's Vulkan renderer is genuinely demanding, and the extra translation hop (Vulkan to MoltenVK to Metal) plus an open-world AAA engine adds up to a rough frame rate even when it does start.</li>
     <li><strong>Waiting for a native fix.</strong> DXMT is actively developed and unimplemented D3D11 calls do get added over time; this one just hasn't landed yet as of this writing.</li>
   </ul>
-  <p>None of this is IgniteX-specific. It's the same wall anyone hits with CrossOver, Whisky, or a raw Wine prefix on Apple Silicon today, because they all lean on the same open-source translation stack underneath. To be direct about what we don't have: IgniteX does not bundle Apple's Game Porting Toolkit or D3DMetal, which is Apple's own, much stronger DirectX-to-Metal path. GPTK is licensed for developer evaluation only, and no consumer product, including ours, is allowed to redistribute it. Some enthusiasts install GPTK themselves and report better luck with demanding DX11/DX12 titles; that's a choice a user can make on their own machine, not something we ship or can vouch for.</p>
+  <p>None of this is IgniteX-specific. It's the same wall anyone hits with any commercial Wine app, Whisky, or a raw Wine prefix on Apple Silicon today, because they all lean on the same open-source translation stack underneath. To be direct about what we don't have: IgniteX does not bundle Apple's Game Porting Toolkit or D3DMetal, which is Apple's own, much stronger DirectX-to-Metal path. GPTK is licensed for developer evaluation only, and no consumer product, including ours, is allowed to redistribute it. Some enthusiasts install GPTK themselves and report better luck with demanding DX11/DX12 titles; that's a choice a user can make on their own machine, not something we ship or can vouch for.</p>
 
   <h2>The honest verdict, scenario by scenario</h2>
   <div class="table-wrap">

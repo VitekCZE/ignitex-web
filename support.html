@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xjpdim1cn9");
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support &amp; Troubleshooting - IgniteX</title>
@@ -63,7 +56,7 @@
       <h2 id="firstrun-h">First-run setup, step by step</h2>
       <ol>
         <li>Drag <strong>IgniteX</strong> into Applications.</li>
-        <li>Double-click IgniteX to open it. The app is signed and notarized by Apple, so there are no security warnings to click through.</li>
+        <li>Double-click IgniteX to open it. If macOS shows a security prompt on the very first launch, open <strong>System Settings → Privacy &amp; Security</strong>, scroll down and click <strong>"Open Anyway"</strong> next to IgniteX, then confirm. This is a one-time step.</li>
         <li>Follow the wizard: it installs the compatibility engine, then downloads the Steam client, about <strong>600&nbsp;MB the first time</strong>. Steam updates itself before the sign-in screen appears, so give it a couple of minutes on the "Steam is updating itself" step.</li>
         <li>Sign in with your Steam account (including your Steam Guard code). Your login goes straight to Valve. IgniteX never sees it.</li>
         <li>Install a game from your library and press Play.</li>
@@ -75,10 +68,11 @@
 
       <h3>"IgniteX can't be opened" on first launch</h3>
       <p>
-        This shouldn't happen: IgniteX is signed and notarized by Apple, so
-        macOS opens it with a plain double-click. If you see this message,
-        your download was likely corrupted in transit. Delete the app, download
-        the DMG again, and reinstall. Still stuck? Use the contact form below.
+        That is macOS Gatekeeper checking a freshly downloaded app. Open
+        <strong>System Settings → Privacy &amp; Security</strong>, scroll down to the
+        message about IgniteX and click <strong>"Open Anyway"</strong>, then confirm
+        with your password or Touch&nbsp;ID. You only do this once; every later
+        launch is a plain double-click. Still stuck? Use the contact form below.
       </p>
 
       <h3>The setup screen sits on "Steam is updating itself"</h3>
@@ -93,9 +87,9 @@
         Compatibility varies by game. Check the game in the
         <a href="games.html">catalog</a>: green means it should work, amber means
         it may need tweaks, red means it won't run locally (usually kernel-level
-        anti-cheat, which we don't and won't circumvent). Only MECCHA CHAMELEON
-        and Counter-Strike&nbsp;2 are verified by hand today; the rest are
-        predictions.
+        anti-cheat, which we don't and won't circumvent). Four titles are verified by hand today: Counter-Strike&nbsp;2,
+        Red Dead Redemption&nbsp;2 (story mode), RV There Yet?, and MECCHA
+        CHAMELEON; the rest are predictions.
       </p>
 
       <h3>Performance is lower than expected</h3>

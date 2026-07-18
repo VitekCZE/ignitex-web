@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xjpdim1cn9");
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Open-Source Attributions &amp; Third-Party Licenses - IgniteX</title>
-  <meta name="description" content="Third-party open-source components bundled in IgniteX: Wine (Sikarugir build), DXMT, MoltenVK, FreeType, libpng, SDL2, GnuTLS. With licenses, source links, and our LGPL source-code offer.">
+  <meta name="description" content="Third-party open-source components in IgniteX: Wine 11 (WineHQ) with published IgniteX patches, DXMT, DXVK, VKD3D-Proton, MoltenVK, FreeType, libpng, SDL2, GnuTLS. With licenses, source links, and our LGPL source-code offer.">
   <link rel="canonical" href="https://ignitex-app.com/licenses.html">
   <meta name="robots" content="index,follow">
   <link rel="stylesheet" href="style.css">
@@ -65,13 +58,25 @@
           <tbody>
             <tr>
               <td>Wine</td>
-              <td>10.0, Sikarugir build (CrossOver-derived)</td>
+              <td>11.0 (WineHQ) + published IgniteX patches</td>
               <td>LGPL-2.1-or-later</td>
-              <td><a href="https://github.com/Sikarugir-App" rel="noopener">github.com/Sikarugir-App</a></td>
+              <td><a href="https://gitlab.winehq.org/wine/wine" rel="noopener">gitlab.winehq.org/wine/wine</a> &middot; <a href="source/">our patches</a></td>
+            </tr>
+            <tr>
+              <td>DXVK</td>
+              <td>3.0.1 (installed on demand)</td>
+              <td>zlib</td>
+              <td><a href="https://github.com/doitsujin/dxvk" rel="noopener">github.com/doitsujin/dxvk</a></td>
+            </tr>
+            <tr>
+              <td>VKD3D-Proton</td>
+              <td>3.0.1 (installed on demand)</td>
+              <td>LGPL-2.1-or-later</td>
+              <td><a href="https://github.com/HansKristian-Work/vkd3d-proton" rel="noopener">github.com/HansKristian-Work/vkd3d-proton</a></td>
             </tr>
             <tr>
               <td>DXMT</td>
-              <td>v0.80</td>
+              <td>v0.80 (installed on demand)</td>
               <td>LGPL-2.1-or-later</td>
               <td><a href="https://github.com/3Shain/dxmt" rel="noopener">github.com/3Shain/dxmt</a></td>
             </tr>
@@ -115,15 +120,20 @@
 
       <h3>Wine (LGPL-2.1-or-later)</h3>
       <p>
-        The engine's core. We redistribute the Sikarugir project's open-source
-        Wine&nbsp;10 build (a CrossOver-derived tree). Recipients must be able to
-        obtain the complete corresponding source code: the source for the build
-        we ship is at
-        <a href="https://github.com/Sikarugir-App" rel="noopener">github.com/Sikarugir-App</a>.
-        If we ever patch Wine ourselves, our patches will be published under the
-        same license (LGPL&nbsp;2.1 §6). Distributing the binaries commercially is
-        permitted; the LGPL applies to the Wine components, not to IgniteX's own
-        code, which only invokes Wine as separate processes.
+        The engine's core. The IgniteX engine is built from the official
+        WineHQ Wine&nbsp;11.0 source with a set of IgniteX patches
+        (per-executable graphics routing and Apple&nbsp;Silicon
+        synchronization work). Recipients must be able to obtain the complete
+        corresponding source code: Wine&nbsp;11.0 is at
+        <a href="https://gitlab.winehq.org/wine/wine" rel="noopener">gitlab.winehq.org/wine/wine</a>
+        and the complete IgniteX patch set is published under the same license
+        (LGPL&nbsp;2.1&nbsp;§6) at <a href="source/">ignitex-app.com/source/</a>.
+        Distributing the binaries commercially is permitted; the LGPL applies
+        to the Wine components, not to IgniteX's own code, which only invokes
+        Wine as separate processes. Graphics components (DXMT, DXVK,
+        VKD3D-Proton, MoltenVK) are fetched on demand from their official
+        open-source releases and verified against pinned SHA-256 checksums
+        before use.
       </p>
 
       <h3>DXMT (LGPL-2.1-or-later)</h3>
